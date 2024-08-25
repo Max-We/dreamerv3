@@ -1,7 +1,7 @@
 import functools
 
 import embodied
-import gym
+import gymnasium as gym
 import numpy as np
 
 
@@ -62,24 +62,32 @@ class FromGym(embodied.Env):
       action = self._unflatten(action)
     else:
       action = action[self._act_key]
-    obs, reward, self._done, self._info = self._env.step(action)
+    obs, reward, self._done, _, self._info = self._env.step(action)
     return self._obs(
         obs, reward,
         is_last=bool(self._done),
         is_terminal=bool(self._info.get('is_terminal', self._done)))
 
-  def _obs(
-      self, obs, reward, is_first=False, is_last=False, is_terminal=False):
-    if not self._obs_dict:
-      obs = {self._obs_key: obs}
-    obs = self._flatten(obs)
-    obs = {k: np.asarray(v) for k, v in obs.items()}
-    obs.update(
-        reward=np.float32(reward),
-        is_first=is_first,
-        is_last=is_last,
-        is_terminal=is_terminal)
-    return obs
+  def _obs(self, obs, reward, is_first=False, is_last=False, is_terminal=False):
+
+    if isinstance(obs, tuple):
+      obs = obs[0]  # Assuming the actual observation is the first element of the tuple
+    if isinstance(obs, np.ndarray):
+      updated_obs = {'image': np.asarray(obs, dtype=np.uint8)}
+    elif isinstance(obs, dict):
+      updated_obs = {k: np.asarray(v, dtype=np.uint8) for k, v in obs.items()}
+    else:
+      print("Unexpected observation format received:", type(obs))
+      updated_obs = {}
+
+    updated_obs.update({
+      'reward': np.float32(reward),
+      'is_first': is_first,
+      'is_last': is_last,
+      'is_terminal': is_terminal
+    })
+
+    return updated_obs
 
   def render(self):
     image = self._env.render('rgb_array')
