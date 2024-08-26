@@ -10,6 +10,7 @@ rich
 ruamel.yaml
 tensorflow-cpu
 tensorflow_probability
+opencv-python-headless
 wandb
 moviepy
 imageio
