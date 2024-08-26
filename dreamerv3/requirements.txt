@@ -4,10 +4,3 @@ jax[cuda12_pip]
 jaxlib
 optax
 tensorflow_probability
-# Tetris
-gymnasium
-# Wandb
-opencv-python-headless
-wandb
-moviepy
-imageio
