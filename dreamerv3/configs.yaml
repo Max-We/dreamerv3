@@ -191,7 +191,7 @@ dmlab:
     steps: 2.6e7
 
 tetris:
-  task: tetris_gymnasium/Tetris
+  task: tetris_rgb
   (enc|dec).simple.minres: 6
   env.tetris.size: [96, 96]
   run:
