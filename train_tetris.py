@@ -20,13 +20,13 @@ def main():
   config = config.update(dreamerv3.configs['atari'])
   config = config.update({
       'logdir': f'~/logdir/run_{datetime.now().strftime("%Y%m%d_%H%M%S")}',
-      'run.log_every': 30,  # Seconds
-      'jax.prealloc': False,
-      'encoder.mlp_keys': '$^',
-      'decoder.mlp_keys': '$^',
-      'encoder.cnn_keys': 'image',
-      'decoder.cnn_keys': 'image',
-      # 'jax.platform': 'cpu',
+      # 'run.log_every': 30,  # Seconds
+      # 'jax.prealloc': False,
+      # 'encoder.mlp_keys': '$^',
+      # 'decoder.mlp_keys': '$^',
+      # 'encoder.cnn_keys': 'image',
+      # 'decoder.cnn_keys': 'image',
+      'jax.platform': 'cpu',
   })
   config = embodied.Flags(config).parse()
 
@@ -56,7 +56,7 @@ def main():
 
   env = from_gym.FromGym(env, obs_key='image')  # Or obs_key='vector'.
   env = dreamerv3.wrap_env(env, config)
-  env = embodied.BatchEnv([env], parallel=False)
+  env = embodied.BatchEnv([env], parallel=True)
 
   agent = dreamerv3.Agent(env.obs_space, env.act_space, step, config)
   replay = embodied.replay.Uniform(
