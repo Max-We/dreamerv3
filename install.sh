@@ -21,5 +21,3 @@ cd ../dreamerv3
 
 # Login wandb
 wandb login
-
-# Env vars
