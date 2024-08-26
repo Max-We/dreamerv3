@@ -198,6 +198,15 @@ atari:
   enc.spaces: 'image'
   dec.spaces: 'image'
 
+tetris:
+  task: tetris_gymnasium/Tetris
+  (enc|dec).simple.minres: 6
+  run:
+    steps: 200e6
+    train_ratio: 64
+  enc.spaces: 'image'
+  dec.spaces: 'image'
+
 procgen:
   task: procgen_coinrun
   env.procgen.size: [96, 96]

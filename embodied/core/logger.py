@@ -280,7 +280,7 @@ class WandBOutput:
   def __init__(self, name, pattern=r'.*', **kwargs):
     self._pattern = re.compile(pattern)
     import wandb
-    wandb.init(name=name, **kwargs)
+    wandb.init(name=name, **kwargs, project='dreamerv3-new')
     self._wandb = wandb
 
   def __call__(self, summaries):
