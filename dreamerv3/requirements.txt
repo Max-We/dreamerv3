@@ -1,5 +1,4 @@
 chex
 einops
-jaxlib
 optax
 tensorflow_probability

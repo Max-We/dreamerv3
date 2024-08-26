@@ -1,8 +1,3 @@
-# Env vars
-export PYTHONUNBUFFERED=1
-export PIP_NO_CACHE_DIR=1
-export PIP_ROOT_USER_ACTION=ignore
-
 # Install DreamerV3
 pip install -U -r dreamerv3/requirements.txt \
   -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
