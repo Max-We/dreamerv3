@@ -16,7 +16,7 @@ def main():
   config = config.update({
       **dreamerv3.Agent.configs['size200m'],
       'logdir': f'~/logdir/run-{embodied.timestamp()}',
-      'jax.platform': 'cpu',
+      # 'jax.platform': 'cpu',
   })
   config = config.update(dreamerv3.Agent.configs['tetris'])
   config = embodied.Flags(config).parse()
