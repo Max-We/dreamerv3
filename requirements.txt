@@ -2,8 +2,8 @@ cloudpickle
 crafter
 # gym==0.19.0
 gymnasium
-# jax
-# jaxlib
+jax[cuda12_pip]
+jaxlib
 numpy
 optax
 rich
