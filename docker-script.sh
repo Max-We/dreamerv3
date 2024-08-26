@@ -10,10 +10,11 @@ pip install jax[cuda]
 pip install -r dreamerv3/requirements.txt \
   -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
-# Install embodied requirements
-pip install -r embodied/requirements.txt
+## Install embodied requirements
+#pip install -r embodied/requirements.txt
 
 # Install Tetris-Gymnasium
+apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 pip install opencv-python-headless
 cd ..
 git clone https://github.com/Max-We/Tetris-Gymnasium.git
