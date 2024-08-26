@@ -15,3 +15,6 @@ cd ../dreamerv3
 
 # Login wandb
 wandb login
+
+# Env vars
+export XLA_PYTHON_CLIENT_MEM_FRACTION=0.8
