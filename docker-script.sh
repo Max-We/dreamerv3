@@ -47,3 +47,6 @@ cd ../dreamerv3
 # Login wandb
 pip install wandb moviepy imageio
 wandb login
+
+# Test JAX
+python3 -c "import jax; print(jax.devices())"
