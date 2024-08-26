@@ -199,6 +199,7 @@ def make_env(config, index, **overrides):
       'dm': 'embodied.envs.from_dmenv:FromDM',
       'crafter': 'embodied.envs.crafter:Crafter',
       'dmc': 'embodied.envs.dmc:DMC',
+      'tetris': 'embodied.envs.tetris:Tetris',
       'atari': 'embodied.envs.atari:Atari',
       'atari100k': 'embodied.envs.atari:Atari',
       'dmlab': 'embodied.envs.dmlab:DMLab',
