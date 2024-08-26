@@ -15,4 +15,5 @@ pip install .
 cd ../dreamerv3
 
 # Login wandb
+pip install wandb moviepy imageio
 wandb login
