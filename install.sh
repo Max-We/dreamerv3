@@ -1,7 +1,13 @@
+# Env vars
+export PYTHONUNBUFFERED=1
+export PIP_NO_CACHE_DIR=1
+export PIP_ROOT_USER_ACTION=ignore
+
 # Install DreamerV3
-pip install -U -r embodied/requirements.txt
 pip install -U -r dreamerv3/requirements.txt \
   -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+export XLA_PYTHON_CLIENT_MEM_FRACTION=0.8
+pip install -U -r embodied/requirements.txt
 
 # Install opencv dependencies
 apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
@@ -17,4 +23,3 @@ cd ../dreamerv3
 wandb login
 
 # Env vars
-export XLA_PYTHON_CLIENT_MEM_FRACTION=0.8
