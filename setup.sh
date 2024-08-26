@@ -1,11 +1,12 @@
+# Install jax
+pip install -U "jax[cuda12]"
+#pip install -U "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+
 # Install DreamerV3
 pip install .
 
-# Install jax
-pip install -U "jax[cuda12_local]"
-
 # Install opencv dependencies
-#apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 
 # Install Tetris-Gymnasium
 cd ..
