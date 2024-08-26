@@ -7,6 +7,7 @@ defaults:
   eval_dir: ''
   filter: 'score|length|fps|ratio|train/.*_loss$|train/rand/.*/mean'
   tensorboard_videos: True
+  wandb_project: 'default'
 
   replay:
     size: 5e6
@@ -192,6 +193,7 @@ dmlab:
 
 tetris:
   task: tetris_rgb
+  wandb_project: 'dreamer-tetris'
   (enc|dec).simple.minres: 6
   env.tetris.size: [96, 96]
   run:

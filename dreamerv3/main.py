@@ -154,7 +154,7 @@ def make_logger(config):
       embodied.logger.JSONLOutput(logdir, 'scores.jsonl', 'episode/score'),
       embodied.logger.TensorBoardOutput(
           logdir, config.run.log_video_fps, config.tensorboard_videos),
-      embodied.logger.WandBOutput(f"dreamer_{config.task}", ...),
+      embodied.logger.WandBOutput(f"run-{embodied.timestamp()}", project=config.wandb_project, config=config),
   ], multiplier)
   return logger
 
