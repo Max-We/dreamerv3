@@ -197,7 +197,7 @@ tetris:
   (enc|dec).simple.minres: 6
   env.tetris.size: [96, 96]
   run:
-    num_envs: 4
+    num_envs: 1
     steps: 200e6
     train_ratio: 64
   enc.spaces: 'image'
