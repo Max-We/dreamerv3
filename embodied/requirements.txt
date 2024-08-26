@@ -7,10 +7,3 @@ psutil
 ruamel.yaml
 tensorflow-cpu
 zmq
-# Tetris
-gymnasium
-# Wandb
-opencv-python-headless
-wandb
-moviepy
-imageio
