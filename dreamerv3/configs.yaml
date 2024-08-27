@@ -199,7 +199,8 @@ tetris:
   run:
     steps: 200e6
     train_ratio: 64
-    replay.size: 1e5
+    replay:
+      size: 1e5
   enc.spaces: 'image'
   dec.spaces: 'image'
 
