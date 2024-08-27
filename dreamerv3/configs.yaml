@@ -10,7 +10,7 @@ defaults:
   wandb_project: 'default'
 
   replay:
-    size: 5e6
+    size: 1e5
     online: True
     fracs: {uniform: 1.0, priority: 0.0, recency: 0.0}
     prio: {exponent: 0.8, maxfrac: 0.5, initial: inf, zero_on_sample: True}
@@ -199,8 +199,6 @@ tetris:
   run:
     steps: 200e6
     train_ratio: 64
-    replay:
-      size: 1e5
   enc.spaces: 'image'
   dec.spaces: 'image'
 
