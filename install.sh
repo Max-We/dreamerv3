@@ -1,8 +1,8 @@
 # Install DreamerV3
 pip install -U -r dreamerv3/requirements.txt \
   -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-#export XLA_PYTHON_CLIENT_MEM_FRACTION=0.8
-export XLA_CLIENT_MEM_FRACTION=0.8
+export XLA_PYTHON_CLIENT_MEM_FRACTION=0.8
+#export XLA_CLIENT_MEM_FRACTION=0.8
 pip install -U -r embodied/requirements.txt
 
 # Install opencv dependencies
